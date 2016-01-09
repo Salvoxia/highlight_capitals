@@ -44,23 +44,23 @@ class highlight_capitals {
          * @param array $kill
          * @return array
          */
-	function modify(&$kill)
-	{
-           $shipClassId = self::getShipClassIDByName($kill["victimshipclass"]);
-           if(in_array($shipClassId, self::$capitals))
-           {
-               $kill["highlight"] = "kl-capital-highlight";
-           }
-           elseif(in_array($shipClassId, self::$superCapitals))
-           {
-               $kill["highlight"] = "kl-supercapital-highlight";
-           }
-           else {
-               $kill["highlight"] = "";
-           }
+		public static function modify(&$kill)
+		{
+			   $shipClassId = self::getShipClassIDByName($kill["victimshipclass"]);
+			   if(in_array($shipClassId, self::$capitals))
+			   {
+				   $kill["highlight"] = "kl-capital-highlight";
+			   }
+			   elseif(in_array($shipClassId, self::$superCapitals))
+			   {
+				   $kill["highlight"] = "kl-supercapital-highlight";
+			   }
+			   else {
+				   $kill["highlight"] = "";
+			   }
 
-           return $kill;
-	}
+			   return $kill;
+		}
 
 
         public static function handler(&$home)
