@@ -1,4 +1,11 @@
 <!-- killlistable.tpl -->
+{if function_exists('getCynoList') && config::get('cc_cyno')}
+	{$cynos = call_user_func('getCynoList')}
+{/if}
+{if function_exists('getCloakList') && config::get('cc_cloak')}
+	{$cloaks = call_user_func('getCloakList')}
+{/if}
+
 <div class="kltable">
 	{section name=day loop=$killlist}
 		{if $daybreak}
@@ -7,7 +14,7 @@
 		<table class="kb-table kb-kl-table kb-table-rows">
 			<thead>
 				<tr class="kb-table-header">
-					<td class="kl-shiptype" colspan="2">Ship type</td>
+					<td class="kl-shiptype" colspan="{if isset($cynos) || isset($cloaks)}3{else}2{/if}">Ship type</td>
 					<td colspan="2" class="kl-victim">Victim</td>
 					<td class="kl-finalblow">Final blow</td>
 					<td class="kl-location">Location</td>
@@ -16,6 +23,7 @@
 			<tbody>
 				{section name=kill loop=$killlist[day].kills}
 					{assign var="k" value=$killlist[day].kills[kill]}
+					
 					{if $k.loss}
 						<tr class="kb-table-row-loss {$k.highlight}" onclick="window.location.href='{$k.urldetail}';">
 						{elseif $k.kill}
@@ -26,6 +34,16 @@
 						<td class="kb-table-imgcell">
 							<img src='{$k.victimshipimage}' style="width: 32px; height: 32px;" alt="" />
 						</td>
+						{if isset($cynos) || isset($cloaks)}
+							<td class="kl-cyno-cloak-mod{if isset($cloaks)} cloak{/if}{if isset($cynos)} cyno{/if}">
+								{if isset($cloaks)}
+									<img src=http://image.eveonline.com/InventoryType/11370_32.png {if in_array({$k.id}, $cloaks)}style="opacity:1;"{/if} alt="" />
+								{/if}
+								{if isset($cynos)}
+									<img src=http://image.eveonline.com/InventoryType/21096_32.png {if in_array({$k.id}, $cynos)}style="opacity:1;"{/if} alt="" />
+								{/if}
+							</td>
+						{/if}
 						<td class="kl-shiptype-text">
 							<div class="no_stretch kl-shiptype-text">
 								<b>{$k.victimshipname}</b>
