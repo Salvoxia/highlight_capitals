@@ -1,0 +1,61 @@
+/* 
+    Document   : highlightCapitals
+    Created on : 13.02.2012, 17:37:36
+    Author     : Evoke. Salvoxia
+    Description:
+        Contains css classes for highlighting capital kills/losses
+
+*/
+
+.kb-table-rows > tbody > tr.kb-table-row-kill.kl-capital-highlight
+{
+    background-image:url("../img/capitals.png");
+    background-repeat: repeat;
+
+}
+
+.kb-table-rows > tbody > tr.kb-table-row-kill.kl-supercapital-highlight
+{
+    background-image:url("../img/supercapitals.png");
+    background-repeat: repeat;
+}
+
+.kb-table-rows > tbody > tr.kb-table-row-loss.kl-capital-highlight
+{
+    background-image:url("../img/capitals.png");
+    background-repeat: repeat;
+
+}
+
+.kb-table-rows > tbody > tr.kb-table-row-loss.kl-supercapital-highlight
+{
+    background-image:url("../img/supercapitals.png");
+    background-repeat: repeat;
+}
+
+.kb-table-rows > tbody > tr.kl-capital-highlight
+{
+    background-image:url("../img/capitals.png");
+    background-repeat: repeat;
+
+}
+
+.kb-table-rows > tbody > tr.kl-supercapital-highlight
+{
+    background-image:url("../img/supercapitals.png");
+    background-repeat: repeat;
+}
+
+.kb-table-rows > tbody > tr.kl-capital-highlight
+{
+    background-image:url("../img/capitals.png");
+    background-repeat: repeat;
+
+}
+
+.kb-table-rows > tbody > tr.kl-supercapital-highlight
+{
+    background-image:url("../img/supercapitals.png");
+    background-repeat: repeat;
+}
+
