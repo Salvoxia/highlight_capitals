@@ -36,7 +36,7 @@ event::register("systemdetail_assembling", "highlight_capitals::handler");
 
 class highlight_capitals {
 
-        private static $capitals = array(19, 27, 20, 29, 34, 39);
+        private static $capitals = array(19, 27, 20, 29, 34, 39, 51);
         private static $superCapitals = array(26, 28);
 
         /**
