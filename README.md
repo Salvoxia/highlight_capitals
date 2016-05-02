@@ -11,6 +11,7 @@ It will highlight kills/losses for the following ship classes:
 * Freighter
 * Capital Industrial Ship
 * Industrial Command Ship
+* Force Auxiliary
 
 ##Installation
 Upload the highlight_capitals folder to your killboard/mods folder. Enable the mod in ACP -> Modules.
@@ -25,6 +26,9 @@ In order to make it work with such mods, the changes to the killlisttable.tpl fi
 Sadly, there's no way around this at the moment.
 
 ##Changelog
+
+#####Version 1.2
+* added support for Foce Auxiliaries
 
 #####Version 1.1
 * fixes for compatibility with PHP 7
