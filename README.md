@@ -27,6 +27,9 @@ Sadly, there's no way around this at the moment.
 
 ##Changelog
 
+#####Version 1.3
+* fixed compatibility with EDK 4.2.23.0+
+
 #####Version 1.2
 * added support for Foce Auxiliaries
 

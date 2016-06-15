@@ -13,7 +13,8 @@ $modInfo['highlight_capitals']['about'] = "by <a href=\"http://gate.eveonline.co
 // register for adding a highlight class to every kill
 event::register("killlist_table_kill", "highlight_capitals::modify");
 
-
+// register for the get_tpl event in order to replace the default killlisttable template with the mod's own
+event::register("get_tpl", "highlight_capitals::getModifiedTemplate");
 
 // register for home page assembling for CSS injection and template replacement
 event::register("home_assembling", "highlight_capitals::handler");
@@ -65,19 +66,8 @@ class highlight_capitals {
 
         public static function handler(&$home)
         {
-               // $home->addBehind(config::get('mostexp_position'), "mostexpensive::display");
                 $home->addBehind("start", "highlight_capitals::header");
-                $home->addBefore("killList", "highlight_capitals::customKillList");
         }
-
-        /**
-         * inject custom KillListClass
-         */
-        public static function customKillList()
-        {
-            include(getcwd() . "/mods/highlight_capitals/includes/class.killlisttable.php");
-        }
-
 
         /**
          *
@@ -98,5 +88,19 @@ class highlight_capitals {
             $shipClassId = $qry->getRow();
             return $shipClassId["scl_id"];
         }
+		
+		/**
+         * Is a callback for the get_tpl event.
+		 * Returns the mod's modified template whenever the killlisttable template
+		 * is requested
+         * @param string $templateName
+         */
+		public static function getModifiedTemplate(&$templateName)
+		{
+			if($templateName == 'killlisttable')
+			{
+				$templateName = getcwd() . "/mods/highlight_capitals/templates/killlisttable.tpl";
+			}
+		}
 }
 ?>
