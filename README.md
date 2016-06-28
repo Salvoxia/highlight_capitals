@@ -27,6 +27,9 @@ Sadly, there's no way around this at the moment.
 
 ##Changelog
 
+#####Version 1.4
+* Added support for displaying the daily stats summary to the killlisttable template
+
 #####Version 1.3
 * fixed compatibility with EDK 4.2.23.0+
 
