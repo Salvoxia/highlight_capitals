@@ -10,6 +10,15 @@
 	{section name=day loop=$killlist}
 		{if $daybreak}
 			<div class="kb-date-header">{"l, F jS"|date:$killlist[day].date}</div><br />
+			{if isset($show_summary) && $show_summary}
+				<table class="kb-table kb-kl-table">
+					<tr class="kb-kl-table-summary">
+						<td class="killcount">{if $killlist[day].summary.numberOfKills > 0}Kills: {$killlist[day].summary.numberOfKills}{/if}</td>
+						{if $killlist[day].summary.numberOfLosses > 0}<td class="kb-kl-summary-cell losscount">Losses: {$killlist[day].summary.numberOfLosses}</td>{/if}
+						{if isset($killlist[day].summary.efficiency)}<td class="kb-kl-summary-cell efficiency">Efficiency: {$killlist[day].summary.efficiency}%</td>{/if}
+					</tr>
+				</table>
+			{/if}
 		{/if}
 		<table class="kb-table kb-kl-table kb-table-rows">
 			<thead>
