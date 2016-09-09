@@ -27,6 +27,9 @@ Sadly, there's no way around this at the moment.
 
 ##Changelog
 
+#####Version 1.5
+* Added support for the zkb_disqus mod
+
 #####Version 1.4
 * Added support for displaying the daily stats summary to the killlisttable template
 
