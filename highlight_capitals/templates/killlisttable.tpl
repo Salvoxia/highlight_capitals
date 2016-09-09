@@ -23,7 +23,7 @@
 		<table class="kb-table kb-kl-table kb-table-rows">
 			<thead>
 				<tr class="kb-table-header">
-					<td class="kl-shiptype" colspan="{if isset($cynos) || isset($cloaks)}3{else}2{/if}">Ship type</td>
+					<td class="kl-shiptype" colspan="{if isset($cynos) || isset($cloaks) || isset($entosises)}3{else}2{/if}">Ship type</td>
 					<td colspan="2" class="kl-victim">Victim</td>
 					<td class="kl-finalblow">Final blow</td>
 					<td class="kl-location">Location</td>
@@ -98,6 +98,7 @@
 									<div class="kl-inv-comm">
 										{if $k.inv}<img src="{$theme_url}/img/involved10_10.png"  alt="I:" /> {$k.inv}{/if}
 										{if $comments_count}<span {if  !$k.commentcount}style="visibility: hidden"{/if}><img src="{$theme_url}/img/comment_white13_10.gif" alt="C:" /> {$k.commentcount}</span>{/if}
+										{if $k.externalid}<a href="{$k.urldetail}#disqus_thread" class="disqus-comment-count" data-disqus-identifier="{$k.externalid}"></a>{/if}
 									</div>
 								{/if}
 							<div class="kl-date">
